@@ -1,0 +1,312 @@
+'use client';
+
+import { useState } from 'react';
+import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { 
+  Layout, 
+  Sparkles, 
+  BarChart3, 
+  Palette,
+  Code,
+  Zap,
+  Users,
+  Rocket,
+  Wand2,
+  Globe,
+  Monitor,
+  Smartphone,
+  Tablet
+} from 'lucide-react';
+
+// Import components
+import WebsiteBuilder from '@/components/website-builder';
+import ContentGenerator from '@/components/content-generator';
+import TemplateGallery from '@/components/template-gallery';
+import AnalyticsDashboard from '@/components/analytics-dashboard';
+
+export default function Home() {
+  const [activeTab, setActiveTab] = useState('home');
+
+  const features = [
+    {
+      id: 'builder',
+      label: 'AI Builder',
+      icon: Wand2,
+      description: 'Drag & drop website builder with AI assistance',
+      color: 'bg-blue-500',
+      status: 'Available'
+    },
+    {
+      id: 'generator',
+      label: 'Content Generator',
+      icon: Sparkles,
+      description: 'AI-powered content creation with 4 free models',
+      color: 'bg-purple-500',
+      status: 'Available'
+    },
+    {
+      id: 'templates',
+      label: 'Smart Templates',
+      icon: Palette,
+      description: 'AI-curated templates with smart filtering',
+      color: 'bg-green-500',
+      status: 'Available'
+    },
+    {
+      id: 'analytics',
+      label: 'Analytics',
+      icon: BarChart3,
+      description: 'Real-time analytics with AI insights',
+      color: 'bg-orange-500',
+      status: 'Available'
+    }
+  ];
+
+  const features2025 = [
+    {
+      icon: Zap,
+      title: 'Lightning Fast',
+      description: 'Build websites 10x faster with AI assistance',
+      metric: '< 2 seconds'
+    },
+    {
+      icon: Code,
+      title: 'Clean Code',
+      description: 'Production-ready, optimized code generation',
+      metric: '100% Valid'
+    },
+    {
+      icon: Globe,
+      title: 'Global CDN',
+      description: 'Instant global deployment with edge computing',
+      metric: '50+ Regions'
+    },
+    {
+      icon: Users,
+      title: 'Team Collaboration',
+      description: 'Real-time editing and version control',
+      metric: 'Unlimited'
+    }
+  ];
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case 'builder':
+        return <WebsiteBuilder />;
+      case 'generator':
+        return <ContentGenerator />;
+      case 'templates':
+        return <TemplateGallery />;
+      case 'analytics':
+        return <AnalyticsDashboard />;
+      default:
+        return (
+          <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+            {/* Hero Section */}
+            <div className="relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
+              <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+                <div className="text-center">
+                  <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">
+                    🚀 2025 Website Builder - AI-Powered
+                  </Badge>
+                  <h1 className="text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                    Build Websites with
+                    <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> AI Intelligence</span>
+                  </h1>
+                  <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                    The most advanced website builder of 2025. Create stunning websites with AI assistance, 
+                    drag-and-drop components, and deploy instantly to the cloud.
+                  </p>
+                  
+                  {/* Action Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+                    <Button 
+                      size="lg" 
+                      className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                      onClick={() => setActiveTab('builder')}
+                    >
+                      <Wand2 className="mr-2 h-5 w-5" />
+                      Start Building
+                    </Button>
+                    <Button variant="outline" size="lg">
+                      <Rocket className="mr-2 h-5 w-5" />
+                      Watch Demo
+                    </Button>
+                  </div>
+                </div>
+
+                {/* Device Previews */}
+                <div className="flex justify-center items-end gap-4 mb-20">
+                  <div className="relative">
+                    <Monitor className="h-32 w-32 text-gray-400" />
+                    <div className="absolute inset-2 bg-gradient-to-br from-blue-500 to-purple-500 rounded opacity-80"></div>
+                  </div>
+                  <div className="relative transform hover:scale-105 transition-transform">
+                    <Tablet className="h-40 w-40 text-gray-400" />
+                    <div className="absolute inset-2 bg-gradient-to-br from-green-500 to-blue-500 rounded opacity-80"></div>
+                  </div>
+                  <div className="relative transform hover:scale-110 transition-transform">
+                    <Smartphone className="h-28 w-28 text-gray-400" />
+                    <div className="absolute inset-2 bg-gradient-to-br from-purple-500 to-pink-500 rounded opacity-80"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Features Grid */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl font-bold text-gray-900 mb-4">Powerful Features</h2>
+                <p className="text-xl text-gray-600">Everything you need to create professional websites</p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+                {features.map((feature) => {
+                  const Icon = feature.icon;
+                  return (
+                    <Card 
+                      key={feature.id}
+                      className="p-6 hover:shadow-lg transition-all duration-300 cursor-pointer border-2 hover:border-blue-200"
+                      onClick={() => setActiveTab(feature.id)}
+                    >
+                      <div className={`w-12 h-12 ${feature.color} rounded-lg flex items-center justify-center mb-4`}>
+                        <Icon className="h-6 w-6 text-white" />
+                      </div>
+                      <h3 className="text-lg font-semibold mb-2">{feature.label}</h3>
+                      <p className="text-gray-600 text-sm mb-3">{feature.description}</p>
+                      <Badge variant="secondary" className="text-xs">
+                        {feature.status}
+                      </Badge>
+                    </Card>
+                  );
+                })}
+              </div>
+
+              {/* 2025 Features Section */}
+              <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-2xl p-8 text-white">
+                <div className="text-center mb-12">
+                  <h2 className="text-3xl font-bold mb-4">2025 Technology Stack</h2>
+                  <p className="text-gray-300 text-lg">Built with the latest technologies for maximum performance</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {features2025.map((feature, index) => {
+                    const Icon = feature.icon;
+                    return (
+                      <div key={index} className="text-center">
+                        <div className="bg-white/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                          <Icon className="h-8 w-8 text-white" />
+                        </div>
+                        <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
+                        <p className="text-gray-300 text-sm mb-2">{feature.description}</p>
+                        <Badge className="bg-blue-600 text-white">{feature.metric}</Badge>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* AI Models Section */}
+              <div className="mt-20 text-center">
+                <h2 className="text-3xl font-bold text-gray-900 mb-8">Free AI Models Available</h2>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                  {['WizardLM-2.8x', 'Llama-3.1', 'Gemma-2-27B', 'Qwen2.5-Coder'].map((model, index) => (
+                    <Card key={index} className="p-4 hover:shadow-md transition-shadow">
+                      <div className="text-center">
+                        <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mx-auto mb-2"></div>
+                        <p className="font-medium text-sm">{model}</p>
+                        <Badge variant="outline" className="text-xs mt-1">Free</Badge>
+                      </div>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+
+              {/* CTA Section */}
+              <div className="text-center mt-20">
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">Ready to Start Building?</h2>
+                <p className="text-gray-600 mb-8">Join thousands of creators building amazing websites with AI</p>
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                  onClick={() => setActiveTab('builder')}
+                >
+                  <Wand2 className="mr-2 h-5 w-5" />
+                  Start Your First Website
+                </Button>
+              </div>
+            </div>
+          </div>
+        );
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {activeTab === 'home' && (
+        <nav className="bg-white/80 backdrop-blur-sm border-b sticky top-0 z-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-16">
+              <div className="flex items-center">
+                <div className="flex-shrink-0">
+                  <h1 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    Website Builder 2025
+                  </h1>
+                </div>
+              </div>
+              <div className="flex space-x-4">
+                <Button
+                  variant={activeTab === 'home' ? 'default' : 'ghost'}
+                  size="sm"
+                  onClick={() => setActiveTab('home')}
+                >
+                  <Layout className="mr-2 h-4 w-4" />
+                  Home
+                </Button>
+                <Button
+                  variant={activeTab === 'builder' ? 'default' : 'ghost'}
+                  size="sm"
+                  onClick={() => setActiveTab('builder')}
+                >
+                  <Wand2 className="mr-2 h-4 w-4" />
+                  Builder
+                </Button>
+                <Button
+                  variant={activeTab === 'generator' ? 'default' : 'ghost'}
+                  size="sm"
+                  onClick={() => setActiveTab('generator')}
+                >
+                  <Sparkles className="mr-2 h-4 w-4" />
+                  AI Generator
+                </Button>
+                <Button
+                  variant={activeTab === 'templates' ? 'default' : 'ghost'}
+                  size="sm"
+                  onClick={() => setActiveTab('templates')}
+                >
+                  <Palette className="mr-2 h-4 w-4" />
+                  Templates
+                </Button>
+                <Button
+                  variant={activeTab === 'analytics' ? 'default' : 'ghost'}
+                  size="sm"
+                  onClick={() => setActiveTab('analytics')}
+                >
+                  <BarChart3 className="mr-2 h-4 w-4" />
+                  Analytics
+                </Button>
+              </div>
+            </div>
+          </div>
+        </nav>
+      )}
+      
+      <main className="flex-1">
+        {renderContent()}
+      </main>
+    </div>
+  );
+}
