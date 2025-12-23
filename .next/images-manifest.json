@@ -40,13 +40,7 @@
         "search": ""
       }
     ],
-    "remotePatterns": [
-      {
-        "protocol": "https",
-        "hostname": "^(?:^(?:api\\.placeholder\\.com)$)$",
-        "pathname": "^(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?)\\/?)$"
-      }
-    ],
+    "remotePatterns": [],
     "qualities": [
       75
     ],

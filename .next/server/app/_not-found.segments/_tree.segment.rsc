@@ -1,8 +1,2 @@
-1:"$Sreact.fragment"
-2:I[22264,["/_next/static/chunks/42ee79b44d21c996.js"],"ViewportBoundary"]
-4:I[22264,["/_next/static/chunks/42ee79b44d21c996.js"],"MetadataBoundary"]
-5:"$Sreact.suspense"
-:HL["/_next/static/chunks/7721bc777a50594f.css","style"]
-0:{"buildId":"g1ikn1BNre2xKMNbVJ4rL","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"/_not-found","paramType":null,"paramKey":"/_not-found","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"head":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"isHeadPartial":false,"staleTime":300}
-3:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
-6:[["$","title","0",{"children":"Website Builder"}],["$","meta","1",{"name":"description","content":"Build beautiful websites with AI-powered tools"}]]
+:HL["/_next/static/chunks/da879620992b3f4a.css","style"]
+0:{"buildId":"T6gKV5jFi1mhUY7_uaxbZ","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"/_not-found","paramType":null,"paramKey":"/_not-found","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
